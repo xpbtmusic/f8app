@@ -57,7 +57,8 @@ async function importObject(ClassType, attributes) {
 
 async function importClass(className) {
   console.log('Loading', className);
-  const response = await fetch(`https://api.parse.com/1/classes/${className}`, {
+//  const response = await fetch(`https://api.parse.com/1/classes/${className}`, {
+  const response = await fetch(`${Parse.serverURL/classes/${className}`, {
     method: 'get',
     headers: {
       'X-Parse-Application-Id': 'R0yDMIKCUyEke2UiadcTBBGd1L5hMBTGJSdBNL3W',

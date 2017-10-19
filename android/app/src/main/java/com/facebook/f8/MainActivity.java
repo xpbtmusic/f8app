@@ -23,6 +23,11 @@
 package com.facebook.f8;
 
 import com.facebook.react.ReactActivity;
+import cl.json.RNSharePackage;
+import com.burnweb.rnsendintent.RNSendIntentPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.facebook.reactnative.androidsdk.FBSDKPackage;
+import com.microsoft.codepush.react.CodePush;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -44,7 +49,7 @@ import java.util.List;
 
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.microsoft.codepush.react.CodePush;
-import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
+//import com.dieam.reactnativepushnotification.ReactNativePushNotificationPackage;
 import com.facebook.reactnative.androidsdk.FBSDKPackage;
 
 import cl.json.RNSharePackage;
@@ -52,7 +57,7 @@ import cl.json.RNSharePackage;
 import com.burnweb.rnsendintent.RNSendIntentPackage;
 
 public class MainActivity extends ReactActivity {
-  private ReactNativePushNotificationPackage _pushNotification;
+  //private ReactNativePushNotificationPackage _pushNotification;
   private CallbackManager mCallbackManager;
 
     @Override
@@ -84,17 +89,16 @@ public class MainActivity extends ReactActivity {
    */
     @Override
     protected List<ReactPackage> getPackages() {
-      this._pushNotification = new ReactNativePushNotificationPackage(this);
+      //this._pushNotification = new ReactNativePushNotificationPackage(this);
       mCallbackManager = new CallbackManager.Factory().create();
 
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new RNSendIntentPackage(),
         new FBSDKPackage(mCallbackManager),
         new LinearGradientPackage(),
         new RNSharePackage(),
-        new RNSendIntentPackage(),
-        new CodePush("qwfkzzq7Y8cSrkiuU7aRCkIP7XYLEJ6b-AFoe", this, BuildConfig.DEBUG),
-        this._pushNotification
+        new CodePush("qwfkzzq7Y8cSrkiuU7aRCkIP7XYLEJ6b-AFoe", this, BuildConfig.DEBUG)
       );
     }
 
@@ -113,7 +117,7 @@ public class MainActivity extends ReactActivity {
    @Override
    public void onNewIntent (Intent intent) {
      super.onNewIntent(intent);
-     _pushNotification.newIntent(intent);
+    // _pushNotification.newIntent(intent);
    }
 
   @Override

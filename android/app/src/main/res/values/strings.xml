@@ -1,4 +1,9 @@
 <resources>
+
+
+
+
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey"></string>
     <string name="app_name">F8</string>
     <string name="facebook_app_id">619048868222429</string>
 </resources>

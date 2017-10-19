@@ -63,9 +63,9 @@ function setup(): ReactClass<{}> {
       };
     }
     render() {
-      if (this.state.isLoading) {
+     /* if (this.state.isLoading) {
         return null;
-      }
+      }*/
       return (
         <Provider store={this.state.store}>
           <F8App />
